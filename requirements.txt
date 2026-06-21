@@ -6,6 +6,7 @@ matplotlib
 tqdm
 xarray
 netcdf4
+h5netcdf
 einops
 timm
 huggingface-hub
