@@ -48,6 +48,42 @@ Across the 20-step rollout, the pretrained and non-pretrained models performed s
 
 That result is preliminary because the hackathon timeline only allowed two main runs. Still, it is a useful signal: some of the structure learned from Earth weather appears to transfer to Mars after fine-tuning, even across different atmospheric composition, pressure regime, dust dynamics, radiative forcing, and planetary day length.
 
+## Model Weights
+
+Model-only weights are published on Hugging Face as `safetensors` exports. These uploads strip optimizer state and RNG state from the original training checkpoints, reducing each artifact from about 15 GB to about 4.7 GB.
+
+| Model | Hugging Face repo | Notes |
+| --- | --- | --- |
+| Pretrained Aurora fine-tune | [`LucasAschenbach/mars-aurora-openmars-pretrained`](https://huggingface.co/LucasAschenbach/mars-aurora-openmars-pretrained) | Earth-pretrained Aurora base model fine-tuned on OpenMARS. |
+| Random-init comparison | [`LucasAschenbach/mars-aurora-openmars-random-init`](https://huggingface.co/LucasAschenbach/mars-aurora-openmars-random-init) | Same Aurora architecture trained on OpenMARS without loading the Earth-pretrained checkpoint. |
+
+Each model repository includes:
+
+- `model.safetensors`: model-only PyTorch state dict.
+- `openmars_stats.json`: normalization statistics needed to construct the Mars/OpenMARS model.
+- `config.json`: export metadata, including source checkpoint step.
+- `training_config.json` and `training_metadata.json`: run configuration and environment metadata.
+- `rollout_eval_val_20step.json`: 20-step recursive rollout metrics on the MY35 validation split.
+
+To reproduce the model-only export from a training checkpoint:
+
+```bash
+python scripts/export_hf_weights.py \
+  --checkpoint artifacts/openmars_runs/<run>/checkpoint_step_9158.pt \
+  --run-dir artifacts/openmars_runs/<run> \
+  --output-dir artifacts/hf_exports/<model-repo-name> \
+  --format safetensors \
+  --model-name <model-repo-name>
+```
+
+Upload the resulting folder with:
+
+```bash
+hf upload-large-folder LucasAschenbach/<model-repo-name> \
+  artifacts/hf_exports/<model-repo-name> \
+  --repo-type model
+```
+
 ## Repository Layout
 
 ```text
@@ -57,6 +93,7 @@ That result is preliminary because the hackathon timeline only allowed two main 
 ├── mars_weather_app/               # Interactive forecast dashboard
 ├── scripts/
 │   ├── create_openmars_split.py    # Build reproducible train/validation split manifests
+│   ├── export_hf_weights.py        # Strip training state and export HF-ready weights
 │   ├── finetune_openmars.py        # Fine-tune Aurora on OpenMARS
 │   ├── evaluate_openmars.py        # Recursive rollout evaluation
 │   └── plot_rollout_eval.py        # Plot rollout metrics
@@ -104,6 +141,17 @@ To run the no-pretraining comparison, add:
 ```
 
 The training script writes run configs, metadata, checkpoints, and TensorBoard logs under `artifacts/openmars_runs/` by default.
+
+To export a training checkpoint as model-only Hugging Face weights:
+
+```bash
+python scripts/export_hf_weights.py \
+  --checkpoint artifacts/openmars_runs/<run>/checkpoint_latest.pt \
+  --run-dir artifacts/openmars_runs/<run> \
+  --output-dir artifacts/hf_exports/<model-name> \
+  --format safetensors \
+  --model-name <model-name>
+```
 
 ## Evaluation
 
