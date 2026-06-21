@@ -4,10 +4,11 @@ import { useEffect, useMemo, useState } from "react"
 import {
   frameForLead,
   loadForecastFrame,
-  loadForecastManifest,
+  loadForecastSources,
   pointAt,
   type ForecastFrame,
   type ForecastManifest,
+  type LoadedForecastSource,
 } from "@/lib/forecast-file"
 import {
   ATMOS_LEVEL_COUNT,
@@ -23,6 +24,7 @@ import {
   type Layer,
 } from "@/lib/mars-data"
 import { ForecastHeader } from "@/components/forecast-header"
+import { ForecastSourcePicker } from "@/components/forecast-source-picker"
 import { LayerControls, MapLegend } from "@/components/layer-controls"
 import { LeadTimeSlider } from "@/components/lead-time-slider"
 import { MarsMap, type GeoPoint } from "@/components/mars-map"
@@ -40,17 +42,33 @@ export function MarsDashboard() {
   const [leadHours, setLeadHours] = useState(48)
   const [level, setLevel] = useState(0)
   const [selected, setSelected] = useState<GeoPoint>({ lon: 0, lat: 0 })
-  const [forecastManifest, setForecastManifest] = useState<ForecastManifest | null>(null)
+  const [forecastSources, setForecastSources] = useState<LoadedForecastSource[]>([])
+  const [forecastSourceId, setForecastSourceId] = useState<string | null>(null)
   const [forecastFrame, setForecastFrame] = useState<ForecastFrame | null>(null)
+
+  const activeForecast = useMemo(
+    () =>
+      forecastSources.find((source) => source.id === forecastSourceId) ??
+      forecastSources[0] ??
+      null,
+    [forecastSourceId, forecastSources],
+  )
+  const forecastManifest: ForecastManifest | null = activeForecast?.manifest ?? null
 
   useEffect(() => {
     let cancelled = false
-    loadForecastManifest()
-      .then((manifest) => {
-        if (!cancelled) setForecastManifest(manifest)
+    loadForecastSources()
+      .then((sources) => {
+        if (!cancelled) {
+          setForecastSources(sources)
+          setForecastSourceId((current) => current ?? sources[0]?.id ?? null)
+        }
       })
       .catch(() => {
-        if (!cancelled) setForecastManifest(null)
+        if (!cancelled) {
+          setForecastSources([])
+          setForecastSourceId(null)
+        }
       })
     return () => {
       cancelled = true
@@ -58,13 +76,16 @@ export function MarsDashboard() {
   }, [])
 
   useEffect(() => {
-    if (!forecastManifest) {
+    if (!activeForecast) {
+      setForecastFrame(null)
       return
     }
 
     let cancelled = false
+    setForecastFrame(null)
+    const forecastManifest = activeForecast.manifest
     const ref = frameForLead(forecastManifest, leadHours)
-    loadForecastFrame(forecastManifest, ref)
+    loadForecastFrame(activeForecast, forecastManifest, ref)
       .then((frame) => {
         if (!cancelled) setForecastFrame(frame)
       })
@@ -74,7 +95,7 @@ export function MarsDashboard() {
     return () => {
       cancelled = true
     }
-  }, [forecastManifest, leadHours])
+  }, [activeForecast, leadHours])
 
   const m = useMemo(() => {
     const { lon, lat } = selected
@@ -105,6 +126,10 @@ export function MarsDashboard() {
   const windSpeed = Math.sqrt(m.u * m.u + m.v * m.v)
   const windDir = ((Math.atan2(-m.u, -m.v) * 180) / Math.PI + 360) % 360
   const levelLabel = `L${level + 1}/${ATMOS_LEVEL_COUNT}`
+  const displayDate =
+    forecastManifest?.baseTime
+      ? new Date(new Date(forecastManifest.baseTime).getTime() + leadHours * 3600 * 1000)
+      : forecastDate(leadHours)
 
   return (
     <main className="relative h-dvh w-full overflow-hidden bg-background">
@@ -123,7 +148,7 @@ export function MarsDashboard() {
       {/* Top bar: title + controls (controls wrap below title on mobile) */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex flex-wrap items-start justify-between gap-2 p-3 sm:p-4">
         <div className="pointer-events-auto">
-          <ForecastHeader date={forecastDate(leadHours)} coord={fmtCoord(selected)} />
+          <ForecastHeader date={displayDate} coord={fmtCoord(selected)} />
         </div>
         <div className="pointer-events-auto flex w-full flex-col gap-2 sm:w-auto sm:items-end">
           <LayerControls active={layer} onChange={setLayer} />
@@ -135,6 +160,11 @@ export function MarsDashboard() {
       <div className="absolute inset-x-0 bottom-0 z-10 p-3 sm:p-4">
         <div className="flex flex-col gap-2 sm:gap-3">
           <div className="flex flex-wrap items-center gap-2">
+            <ForecastSourcePicker
+              sources={forecastSources}
+              activeId={forecastSourceId}
+              onChange={setForecastSourceId}
+            />
             <LeadTimeSlider value={leadHours} onChange={setLeadHours} />
             <VerticalLevelSelector level={level} onChange={setLevel} />
           </div>

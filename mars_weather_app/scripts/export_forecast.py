@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -119,6 +120,7 @@ def main() -> None:
     manifest = {
         "schema": "mars-weather-forecast-v1",
         "source": args.source,
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
         "stepHours": STEP_HOURS,
         "grid": {
             "lat": [float(v) for v in ds.lat.values],
@@ -136,6 +138,8 @@ def main() -> None:
         },
         "frames": frames,
     }
+    if "base_time" in ds.attrs:
+        manifest["baseTime"] = str(ds.attrs["base_time"])
     if "Ls" in ds:
         manifest["solarLongitude"] = [float(v) for v in ds.Ls.isel(time=slice(0, frame_count)).values]
     if "MY" in ds:

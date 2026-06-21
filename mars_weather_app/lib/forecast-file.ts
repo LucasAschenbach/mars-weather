@@ -6,6 +6,7 @@ import {
 } from "@/lib/mars-data"
 
 export const FORECAST_MANIFEST_PATH = "/forecasts/latest/manifest.json"
+export const FORECAST_CATALOG_PATH = "/forecasts/catalog.json"
 
 const SURFACE_ORDER: SurfaceVariable[] = ["ps", "tsurf", "co2ice", "dustcol"]
 const ATMOS_ORDER: AtmosVariable[] = ["u", "v", "temp"]
@@ -23,6 +24,17 @@ export interface ForecastManifest {
   }
   variables: Record<string, { unit: string; dims: string[]; encoding: ForecastEncoding }>
   frames: ForecastFrameRef[]
+}
+
+export interface ForecastSource {
+  id: string
+  label: string
+  description?: string
+  manifestPath: string
+}
+
+export interface LoadedForecastSource extends ForecastSource {
+  manifest: ForecastManifest
 }
 
 export interface ForecastEncoding {
@@ -214,6 +226,35 @@ export async function loadForecastManifest(): Promise<ForecastManifest | null> {
   return response.json()
 }
 
+export async function loadForecastSources(): Promise<LoadedForecastSource[]> {
+  const catalogResponse = await fetch(FORECAST_CATALOG_PATH, { cache: "no-store" })
+  if (catalogResponse.ok) {
+    const catalog = (await catalogResponse.json()) as { forecasts: ForecastSource[] }
+    const loaded = await Promise.all(
+      catalog.forecasts.map(async (source) => {
+        const manifestResponse = await fetch(source.manifestPath, { cache: "no-store" })
+        if (!manifestResponse.ok) return null
+        return {
+          ...source,
+          manifest: (await manifestResponse.json()) as ForecastManifest,
+        }
+      }),
+    )
+    return loaded.filter((source): source is LoadedForecastSource => source !== null)
+  }
+
+  const manifest = await loadForecastManifest()
+  if (!manifest) return []
+  return [
+    {
+      id: "latest",
+      label: manifest.source || "Latest forecast",
+      manifestPath: FORECAST_MANIFEST_PATH,
+      manifest,
+    },
+  ]
+}
+
 export function frameForLead(
   manifest: ForecastManifest,
   leadHours: number,
@@ -226,10 +267,12 @@ export function frameForLead(
 }
 
 export async function loadForecastFrame(
+  source: ForecastSource,
   manifest: ForecastManifest,
   ref: ForecastFrameRef,
 ): Promise<ForecastFrame> {
-  const response = await fetch(`/forecasts/latest/${ref.path}`, { cache: "force-cache" })
+  const manifestDir = source.manifestPath.slice(0, source.manifestPath.lastIndexOf("/"))
+  const response = await fetch(`${manifestDir}/${ref.path}`, { cache: "force-cache" })
   if (!response.ok) {
     throw new Error(`Unable to load forecast frame ${ref.path}`)
   }

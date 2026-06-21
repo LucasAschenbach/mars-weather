@@ -1,0 +1,23 @@
+{
+  "schema": "mars-weather-forecast-catalog-v1",
+  "forecasts": [
+    {
+      "id": "pretrained",
+      "label": "Pretrained",
+      "description": "Earth-pretrained Aurora fine-tuned on OpenMARS",
+      "manifestPath": "/forecasts/pretrained/manifest.json"
+    },
+    {
+      "id": "random-init",
+      "label": "Random init",
+      "description": "Aurora architecture trained on OpenMARS without Earth pretraining",
+      "manifestPath": "/forecasts/random-init/manifest.json"
+    },
+    {
+      "id": "ground-truth",
+      "label": "Ground truth",
+      "description": "OpenMARS validation data for the same initialization time",
+      "manifestPath": "/forecasts/ground-truth/manifest.json"
+    }
+  ]
+}
