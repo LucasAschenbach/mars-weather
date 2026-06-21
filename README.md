@@ -93,7 +93,9 @@ hf upload-large-folder LucasAschenbach/<model-repo-name> \
 ├── mars_weather_app/               # Interactive forecast dashboard
 ├── scripts/
 │   ├── create_openmars_split.py    # Build reproducible train/validation split manifests
+│   ├── download_openmars.py        # Download OpenMARS NetCDF files from Figshare
 │   ├── export_hf_weights.py        # Strip training state and export HF-ready weights
+│   ├── export_rollout_netcdf.py    # Export recursive rollouts to NetCDF
 │   ├── finetune_openmars.py        # Fine-tune Aurora on OpenMARS
 │   ├── evaluate_openmars.py        # Recursive rollout evaluation
 │   └── plot_rollout_eval.py        # Plot rollout metrics
@@ -120,6 +122,18 @@ pip install -r requirements.txt
 ```
 
 OpenMARS NetCDF files are expected under `data/`, matching the paths in the split manifest.
+To download the files used by the included MY28-34/MY35 split:
+
+```bash
+python scripts/download_openmars.py \
+  --manifest splits/openmars_my28-34_train_my35_val.json \
+  --output-dir data \
+  --workers 4
+```
+
+The downloader uses the Figshare file IDs already present in the split manifest, writes
+atomic `.part` files, resumes partial downloads when possible, retries failed transfers,
+and can optionally validate each NetCDF with `--validate`.
 
 ## Training
 
