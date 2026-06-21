@@ -7,6 +7,7 @@ import argparse
 import csv
 import dataclasses
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -16,7 +17,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 import torch
-from torch.utils.data import DataLoader
+import torch.distributed as dist
+from torch.utils.data import DataLoader, Subset
 from tqdm import tqdm
 
 from mars_weather import (
@@ -49,6 +51,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--stats", type=Path, default=None)
     parser.add_argument("--model-size", choices=("base", "small"), default=None)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--distributed", choices=("none", "ddp"), default="none")
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--rollout-steps", type=int, default=10)
     parser.add_argument("--num-workers", type=int, default=4)
@@ -58,6 +61,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--write-csv", action="store_true")
     return parser.parse_args()
+
+
+def init_distributed(mode: str) -> tuple[bool, int, int, int]:
+    if mode == "none":
+        return False, 0, 0, 1
+    if mode != "ddp":
+        raise ValueError(f"Unsupported distributed mode: {mode}")
+    if not torch.cuda.is_available():
+        raise RuntimeError("Distributed eval requires CUDA.")
+
+    dist.init_process_group(backend="nccl")
+    local_rank = int(os.environ["LOCAL_RANK"])
+    rank = int(os.environ["RANK"])
+    world_size = int(os.environ["WORLD_SIZE"])
+    torch.cuda.set_device(local_rank)
+    return True, local_rank, rank, world_size
+
+
+def cleanup_distributed(enabled: bool) -> None:
+    if enabled and dist.is_initialized():
+        dist.destroy_process_group()
 
 
 def load_run_config(run_dir: Path | None) -> dict:
@@ -163,6 +187,46 @@ def summarize_window_values(values: list[float]) -> dict[str, float]:
     }
 
 
+def merge_eval_accumulators(accumulators: list[dict]) -> tuple[dict, dict, dict]:
+    norm_sums: dict[int, dict[str, float]] = {}
+    norm_count: dict[int, float] = {}
+    physical: dict[int, dict[str, dict[str, float]]] = {}
+
+    for accum in accumulators:
+        for step, variables in accum["norm_sums"].items():
+            step = int(step)
+            step_sums = norm_sums.setdefault(step, {name: 0.0 for name in SURF_VARS + ATMOS_VARS})
+            for name, value in variables.items():
+                step_sums[name] += float(value)
+
+        for step, value in accum["norm_count"].items():
+            step = int(step)
+            norm_count[step] = norm_count.get(step, 0.0) + float(value)
+
+        for step, variables in accum["physical"].items():
+            step = int(step)
+            step_physical = physical.setdefault(step, {})
+            for name, values in variables.items():
+                item = step_physical.setdefault(
+                    name,
+                    {
+                        "sse": 0.0,
+                        "sae": 0.0,
+                        "target_sumsq": 0.0,
+                        "target_abs_sum": 0.0,
+                        "count": 0.0,
+                        "window_rmse": [],
+                        "window_relative_rmse": [],
+                    },
+                )
+                for key in ("sse", "sae", "target_sumsq", "target_abs_sum", "count"):
+                    item[key] += float(values[key])
+                item["window_rmse"].extend(values["window_rmse"])
+                item["window_relative_rmse"].extend(values["window_relative_rmse"])
+
+    return norm_sums, norm_count, physical
+
+
 def advance_batch_history(batch, pred):
     return dataclasses.replace(
         pred,
@@ -202,6 +266,9 @@ def climatology_prediction(target, stats: OpenMARSStats):
 
 def main() -> None:
     args = parse_args()
+    distributed, local_rank, rank, world_size = init_distributed(args.distributed)
+    is_rank_zero = rank == 0
+    device = torch.device("cuda", local_rank) if distributed else torch.device(args.device)
     config = load_run_config(args.run_dir)
     checkpoint_path, split_manifest, output_path = resolve_paths(args, config)
 
@@ -221,7 +288,7 @@ def main() -> None:
         )
         model.load_state_dict(checkpoint["model"])
         model.eval()
-        model.to(args.device)
+        model.to(device)
 
     manifest = load_split_manifest(split_manifest)
     dataset = rollout_dataset_from_manifest(
@@ -230,6 +297,8 @@ def main() -> None:
         rollout_steps=args.rollout_steps,
         dataset_cache_size=args.dataset_cache_size,
     )
+    if distributed:
+        dataset = Subset(dataset, range(rank, len(dataset), world_size))
     loader_kwargs = {
         "batch_size": args.batch_size,
         "shuffle": False,
@@ -251,41 +320,64 @@ def main() -> None:
     }
     started = time.perf_counter()
 
-    with torch.inference_mode():
-        for batch_i, (batch, targets) in enumerate(tqdm(loader, desc=f"rollout {args.split}")):
-            if args.max_batches is not None and batch_i >= args.max_batches:
-                break
-            batch = batch.to(args.device)
-            for step, target in enumerate(targets, start=1):
-                target = target.to(args.device)
-                if args.baseline == "persistence":
-                    pred = persistence_prediction(batch, target)
-                elif args.baseline == "climatology":
-                    pred = climatology_prediction(target, stats)
-                else:
-                    assert model is not None
-                    pred = model(batch)
-                losses = normalized_mse_losses(pred, target)
-                batch_size = next(iter(target.surf_vars.values())).shape[0]
-                for name, value in losses.items():
-                    norm_sums[step][name] += float(value.detach().cpu()) * batch_size
-                norm_count[step] += batch_size
+    try:
+        with torch.inference_mode():
+            progress = tqdm(
+                loader,
+                desc=f"rollout {args.split}",
+                disable=not is_rank_zero,
+            )
+            for batch_i, (batch, targets) in enumerate(progress):
+                if args.max_batches is not None and batch_i >= args.max_batches:
+                    break
+                batch = batch.to(device)
+                for step, target in enumerate(targets, start=1):
+                    target = target.to(device)
+                    if args.baseline == "persistence":
+                        pred = persistence_prediction(batch, target)
+                    elif args.baseline == "climatology":
+                        pred = climatology_prediction(target, stats)
+                    else:
+                        assert model is not None
+                        pred = model(batch)
+                    losses = normalized_mse_losses(pred, target)
+                    batch_size = next(iter(target.surf_vars.values())).shape[0]
+                    for name, value in losses.items():
+                        norm_sums[step][name] += float(value.detach().cpu()) * batch_size
+                    norm_count[step] += batch_size
 
-                for name in SURF_VARS:
-                    add_tensor_metric(
-                        physical[step],
-                        name,
-                        pred.surf_vars[name],
-                        target.surf_vars[name],
-                    )
-                for name in ATMOS_VARS:
-                    add_tensor_metric(
-                        physical[step],
-                        name,
-                        pred.atmos_vars[name],
-                        target.atmos_vars[name],
-                    )
-                batch = advance_batch_history(batch, pred)
+                    for name in SURF_VARS:
+                        add_tensor_metric(
+                            physical[step],
+                            name,
+                            pred.surf_vars[name],
+                            target.surf_vars[name],
+                        )
+                    for name in ATMOS_VARS:
+                        add_tensor_metric(
+                            physical[step],
+                            name,
+                            pred.atmos_vars[name],
+                            target.atmos_vars[name],
+                        )
+                    batch = advance_batch_history(batch, pred)
+
+        if distributed:
+            gathered: list[dict] | None = [None for _ in range(world_size)] if is_rank_zero else None
+            dist.gather_object(
+                {"norm_sums": norm_sums, "norm_count": norm_count, "physical": physical},
+                gathered,
+                dst=0,
+            )
+            if not is_rank_zero:
+                return
+            assert gathered is not None
+            norm_sums, norm_count, physical = merge_eval_accumulators(gathered)
+    finally:
+        cleanup_distributed(distributed and not is_rank_zero)
+
+    if distributed and is_rank_zero:
+        cleanup_distributed(True)
 
     lead_metrics = {}
     for step in range(1, args.rollout_steps + 1):
@@ -325,6 +417,8 @@ def main() -> None:
         "split_manifest": str(split_manifest),
         "split": args.split,
         "model_size": model_size,
+        "distributed": args.distributed,
+        "world_size": world_size,
         "rollout_steps": args.rollout_steps,
         "num_windows": int(norm_count[1]) if norm_count else 0,
         "max_batches": args.max_batches,
@@ -340,7 +434,18 @@ def main() -> None:
         csv_path = output_path.with_suffix(".csv")
         with csv_path.open("w", newline="") as f:
             writer = csv.writer(f)
-            writer.writerow(["lead_step", "variable", "normalized_mse", "rmse", "mae", "count"])
+            writer.writerow(
+                [
+                    "lead_step",
+                    "variable",
+                    "normalized_mse",
+                    "rmse",
+                    "mae",
+                    "relative_rmse",
+                    "relative_mae",
+                    "count",
+                ]
+            )
             for step, step_metrics in lead_metrics.items():
                 for name in SURF_VARS + ATMOS_VARS:
                     writer.writerow(
@@ -350,6 +455,8 @@ def main() -> None:
                             step_metrics["normalized_mse"][name],
                             step_metrics["physical"][name]["rmse"],
                             step_metrics["physical"][name]["mae"],
+                            step_metrics["physical"][name]["relative_rmse"],
+                            step_metrics["physical"][name]["relative_mae"],
                             int(step_metrics["physical"][name]["count"]),
                         ]
                     )
@@ -364,6 +471,7 @@ def main() -> None:
                     "normalized_mse_mean"
                 ],
                 "num_windows": metrics["num_windows"],
+                "world_size": world_size,
             },
             indent=2,
         )
