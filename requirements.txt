@@ -1,0 +1,13 @@
+torch
+tensorboard
+numpy
+scipy
+matplotlib
+tqdm
+xarray
+netcdf4
+einops
+timm
+huggingface-hub
+pydantic
+pytest

@@ -1,0 +1,13 @@
+# System
+env.sh
+
+# Python
+.venv/
+.pytest_cache/
+__pycache__/
+
+# Output
+output/
+data
+data/
+artifacts/

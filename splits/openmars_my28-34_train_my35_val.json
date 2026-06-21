@@ -1,0 +1,2006 @@
+{
+  "assignment": "Samples are assigned by the Mars Year of the target frame.",
+  "files": [
+    {
+      "end_ls": 41.82093048095703,
+      "end_sol": 2761.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962786.nc",
+      "start_ls": 27.867996215820312,
+      "start_sol": 2731.083251953125
+    },
+    {
+      "end_ls": 78.57804870605469,
+      "end_sol": 3511.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962789.nc",
+      "start_ls": 65.1552505493164,
+      "start_sol": 3481.083251953125
+    },
+    {
+      "end_ls": 27.82853126525879,
+      "end_sol": 2731.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962792.nc",
+      "start_ls": 13.396116256713867,
+      "start_sol": 2701.083251953125
+    },
+    {
+      "end_ls": 109.93562316894531,
+      "end_sol": 2911.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962795.nc",
+      "start_ls": 96.0862045288086,
+      "start_sol": 2881.083251953125
+    },
+    {
+      "end_ls": 201.62005615234375,
+      "end_sol": 3751.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962798.nc",
+      "start_ls": 183.66168212890625,
+      "start_sol": 3721.083251953125
+    },
+    {
+      "end_ls": 320.7010803222656,
+      "end_sol": 3271.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962801.nc",
+      "start_ls": 302.8765869140625,
+      "start_sol": 3241.083251953125
+    },
+    {
+      "end_ls": 171.30752563476562,
+      "end_sol": 3031.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962804.nc",
+      "start_ls": 154.8685760498047,
+      "start_sol": 3001.083251953125
+    },
+    {
+      "end_ls": 225.90525817871094,
+      "end_sol": 3121.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962807.nc",
+      "start_ls": 206.98529052734375,
+      "start_sol": 3091.083251953125
+    },
+    {
+      "end_ls": 55.485618591308594,
+      "end_sol": 2791.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962810.nc",
+      "start_ls": 41.85926818847656,
+      "start_sol": 2761.083251953125
+    },
+    {
+      "end_ls": 68.97634887695312,
+      "end_sol": 2821.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962813.nc",
+      "start_ls": 55.52326202392578,
+      "start_sol": 2791.083251953125
+    },
+    {
+      "end_ls": 23.73532485961914,
+      "end_sol": 3391.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962816.nc",
+      "start_ls": 9.137765884399414,
+      "start_sol": 3361.083251953125
+    },
+    {
+      "end_ls": 353.78753662109375,
+      "end_sol": 3331.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962819.nc",
+      "start_ls": 337.7298278808594,
+      "start_sol": 3301.083251953125
+    },
+    {
+      "end_ls": 264.8778991699219,
+      "end_sol": 3181.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962822.nc",
+      "start_ls": 245.39251708984375,
+      "start_sol": 3151.083251953125
+    },
+    {
+      "end_ls": 13.355106353759766,
+      "end_sol": 2701.0,
+      "mars_years": [
+        27,
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962825.nc",
+      "start_ls": 358.2953186035156,
+      "start_sol": 2671.083251953125
+    },
+    {
+      "end_ls": 51.59292221069336,
+      "end_sol": 3451.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962828.nc",
+      "start_ls": 37.88865280151367,
+      "start_sol": 3421.083251953125
+    },
+    {
+      "end_ls": 245.3382110595703,
+      "end_sol": 3151.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962831.nc",
+      "start_ls": 225.95875549316406,
+      "start_sol": 3121.083251953125
+    },
+    {
+      "end_ls": 337.68389892578125,
+      "end_sol": 3301.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962834.nc",
+      "start_ls": 320.74951171875,
+      "start_sol": 3271.083251953125
+    },
+    {
+      "end_ls": 315.66632080078125,
+      "end_sol": 3931.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962837.nc",
+      "start_ls": 297.5979309082031,
+      "start_sol": 3901.083251953125
+    },
+    {
+      "end_ls": 166.49185180664062,
+      "end_sol": 3691.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962840.nc",
+      "start_ls": 150.3013916015625,
+      "start_sol": 3661.083251953125
+    },
+    {
+      "end_ls": 154.82398986816406,
+      "end_sol": 3001.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962843.nc",
+      "start_ls": 139.2215118408203,
+      "start_sol": 2971.083251953125
+    },
+    {
+      "end_ls": 349.25714111328125,
+      "end_sol": 3991.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962846.nc",
+      "start_ls": 332.9542236328125,
+      "start_sol": 3961.083251953125
+    },
+    {
+      "end_ls": 239.73985290527344,
+      "end_sol": 3811.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962849.nc",
+      "start_ls": 220.4589080810547,
+      "start_sol": 3781.083251953125
+    },
+    {
+      "end_ls": 284.1474609375,
+      "end_sol": 3211.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962852.nc",
+      "start_ls": 264.9319763183594,
+      "start_sol": 3181.083251953125
+    },
+    {
+      "end_ls": 134.8342742919922,
+      "end_sol": 3631.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962855.nc",
+      "start_ls": 120.14173126220703,
+      "start_sol": 3601.083251953125
+    },
+    {
+      "end_ls": 82.4461898803711,
+      "end_sol": 2851.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962858.nc",
+      "start_ls": 69.01372528076172,
+      "start_sol": 2821.083251953125
+    },
+    {
+      "end_ls": 96.04808807373047,
+      "end_sol": 2881.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962861.nc",
+      "start_ls": 82.48371887207031,
+      "start_sol": 2851.083251953125
+    },
+    {
+      "end_ls": 183.6128692626953,
+      "end_sol": 3721.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962864.nc",
+      "start_ls": 166.5381622314453,
+      "start_sol": 3691.083251953125
+    },
+    {
+      "end_ls": 33.84857940673828,
+      "end_sol": 4081.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962867.nc",
+      "start_ls": 19.639284133911133,
+      "start_sol": 4051.083251953125
+    },
+    {
+      "end_ls": 4.782225608825684,
+      "end_sol": 4021.0,
+      "mars_years": [
+        29,
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962870.nc",
+      "start_ls": 349.3013610839844,
+      "start_sol": 3991.083251953125
+    },
+    {
+      "end_ls": 124.26249694824219,
+      "end_sol": 2941.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962873.nc",
+      "start_ls": 109.97473907470703,
+      "start_sol": 2911.083251953125
+    },
+    {
+      "end_ls": 92.12642669677734,
+      "end_sol": 3541.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962876.nc",
+      "start_ls": 78.61549377441406,
+      "start_sol": 3511.083251953125
+    },
+    {
+      "end_ls": 206.93350219726562,
+      "end_sol": 3091.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962879.nc",
+      "start_ls": 188.736328125,
+      "start_sol": 3061.083251953125
+    },
+    {
+      "end_ls": 65.11784362792969,
+      "end_sol": 3481.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962882.nc",
+      "start_ls": 51.63072204589844,
+      "start_sol": 3451.083251953125
+    },
+    {
+      "end_ls": 145.7578887939453,
+      "end_sol": 4321.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962885.nc",
+      "start_ls": 130.58761596679688,
+      "start_sol": 4291.08349609375
+    },
+    {
+      "end_ls": 196.37139892578125,
+      "end_sol": 4411.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962888.nc",
+      "start_ls": 178.66055297851562,
+      "start_sol": 4381.08349609375
+    },
+    {
+      "end_ls": 139.1791229248047,
+      "end_sol": 2971.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962891.nc",
+      "start_ls": 124.30304718017578,
+      "start_sol": 2941.083251953125
+    },
+    {
+      "end_ls": 178.61245727539062,
+      "end_sol": 4381.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962894.nc",
+      "start_ls": 161.7951202392578,
+      "start_sol": 4351.08349609375
+    },
+    {
+      "end_ls": 278.6716613769531,
+      "end_sol": 3871.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962897.nc",
+      "start_ls": 259.34228515625,
+      "start_sol": 3841.083251953125
+    },
+    {
+      "end_ls": 88.22460174560547,
+      "end_sol": 4201.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962900.nc",
+      "start_ls": 74.7545394897461,
+      "start_sol": 4171.08349609375
+    },
+    {
+      "end_ls": 297.5464782714844,
+      "end_sol": 3901.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962903.nc",
+      "start_ls": 278.72491455078125,
+      "start_sol": 3871.083251953125
+    },
+    {
+      "end_ls": 302.82574462890625,
+      "end_sol": 3241.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962906.nc",
+      "start_ls": 284.2002868652344,
+      "start_sol": 3211.083251953125
+    },
+    {
+      "end_ls": 101.9295425415039,
+      "end_sol": 4231.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962912.nc",
+      "start_ls": 88.2623291015625,
+      "start_sol": 4201.08349609375
+    },
+    {
+      "end_ls": 150.25746154785156,
+      "end_sol": 3661.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962915.nc",
+      "start_ls": 134.8760986328125,
+      "start_sol": 3631.083251953125
+    },
+    {
+      "end_ls": 214.9521484375,
+      "end_sol": 4441.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962918.nc",
+      "start_ls": 196.42193603515625,
+      "start_sol": 4411.08349609375
+    },
+    {
+      "end_ls": 74.71714782714844,
+      "end_sol": 4171.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962921.nc",
+      "start_ls": 61.291500091552734,
+      "start_sol": 4141.08349609375
+    },
+    {
+      "end_ls": 47.68232345581055,
+      "end_sol": 4111.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962924.nc",
+      "start_ls": 33.88751220703125,
+      "start_sol": 4081.083251953125
+    },
+    {
+      "end_ls": 161.74951171875,
+      "end_sol": 4351.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962927.nc",
+      "start_ls": 145.80117797851562,
+      "start_sol": 4321.08349609375
+    },
+    {
+      "end_ls": 15.415980339050293,
+      "end_sol": 4711.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962930.nc",
+      "start_ls": 0.4525121748447418,
+      "start_sol": 4681.08349609375
+    },
+    {
+      "end_ls": 273.15338134765625,
+      "end_sol": 4531.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962933.nc",
+      "start_ls": 253.73873901367188,
+      "start_sol": 4501.08349609375
+    },
+    {
+      "end_ls": 9.096238136291504,
+      "end_sol": 3361.0,
+      "mars_years": [
+        28,
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962936.nc",
+      "start_ls": 353.83111572265625,
+      "start_sol": 3331.083251953125
+    },
+    {
+      "end_ls": 0.40985435247421265,
+      "end_sol": 4681.0,
+      "mars_years": [
+        30,
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962939.nc",
+      "start_ls": 344.70355224609375,
+      "start_sol": 4651.08349609375
+    },
+    {
+      "end_ls": 220.4058380126953,
+      "end_sol": 3781.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962942.nc",
+      "start_ls": 201.67124938964844,
+      "start_sol": 3751.083251953125
+    },
+    {
+      "end_ls": 37.85003662109375,
+      "end_sol": 3421.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962945.nc",
+      "start_ls": 23.775188446044922,
+      "start_sol": 3391.083251953125
+    },
+    {
+      "end_ls": 332.9075622558594,
+      "end_sol": 3961.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962948.nc",
+      "start_ls": 315.7154541015625,
+      "start_sol": 3931.083251953125
+    },
+    {
+      "end_ls": 130.54632568359375,
+      "end_sol": 4291.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962951.nc",
+      "start_ls": 116.02547454833984,
+      "start_sol": 4261.08349609375
+    },
+    {
+      "end_ls": 19.59898567199707,
+      "end_sol": 4051.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962954.nc",
+      "start_ls": 4.824303150177002,
+      "start_sol": 4021.083251953125
+    },
+    {
+      "end_ls": 248.0760955810547,
+      "end_sol": 5161.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962957.nc",
+      "start_ls": 228.65916442871094,
+      "start_sol": 5131.08349609375
+    },
+    {
+      "end_ls": 310.55865478515625,
+      "end_sol": 4591.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962960.nc",
+      "start_ls": 292.25640869140625,
+      "start_sol": 4561.08349609375
+    },
+    {
+      "end_ls": 141.3226318359375,
+      "end_sol": 4981.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962963.nc",
+      "start_ls": 126.35275268554688,
+      "start_sol": 4951.08349609375
+    },
+    {
+      "end_ls": 259.28802490234375,
+      "end_sol": 3841.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962966.nc",
+      "start_ls": 239.79403686523438,
+      "start_sol": 3811.083251953125
+    },
+    {
+      "end_ls": 286.8041687011719,
+      "end_sol": 5221.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962969.nc",
+      "start_ls": 267.6541442871094,
+      "start_sol": 5191.08349609375
+    },
+    {
+      "end_ls": 191.19105529785156,
+      "end_sol": 5071.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962972.nc",
+      "start_ls": 173.73367309570312,
+      "start_sol": 5041.08349609375
+    },
+    {
+      "end_ls": 204.2071533203125,
+      "end_sol": 5761.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49962975.nc",
+      "start_ls": 186.13088989257812,
+      "start_sol": 5731.08349609375
+    },
+    {
+      "end_ls": 115.98580169677734,
+      "end_sol": 4261.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962978.nc",
+      "start_ls": 101.96803283691406,
+      "start_sol": 4231.08349609375
+    },
+    {
+      "end_ls": 328.0574645996094,
+      "end_sol": 4621.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962981.nc",
+      "start_ls": 310.6084899902344,
+      "start_sol": 4591.08349609375
+    },
+    {
+      "end_ls": 355.97607421875,
+      "end_sol": 5341.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962984.nc",
+      "start_ls": 340.03558349609375,
+      "start_sol": 5311.08349609375
+    },
+    {
+      "end_ls": 188.68679809570312,
+      "end_sol": 3061.0,
+      "mars_years": [
+        28
+      ],
+      "num_times": 360,
+      "path": "data/49962987.nc",
+      "start_ls": 171.35455322265625,
+      "start_sol": 3031.083251953125
+    },
+    {
+      "end_ls": 228.60549926757812,
+      "end_sol": 5131.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962990.nc",
+      "start_ls": 209.60276794433594,
+      "start_sol": 5101.08349609375
+    },
+    {
+      "end_ls": 111.91143798828125,
+      "end_sol": 4921.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49962993.nc",
+      "start_ls": 98.00985717773438,
+      "start_sol": 4891.08349609375
+    },
+    {
+      "end_ls": 253.6844024658203,
+      "end_sol": 4501.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49962996.nc",
+      "start_ls": 234.21336364746094,
+      "start_sol": 4471.08349609375
+    },
+    {
+      "end_ls": 105.91633605957031,
+      "end_sol": 3571.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49962999.nc",
+      "start_ls": 92.16432189941406,
+      "start_sol": 3541.083251953125
+    },
+    {
+      "end_ls": 152.47911071777344,
+      "end_sol": 5671.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963002.nc",
+      "start_ls": 136.990966796875,
+      "start_sol": 5641.08349609375
+    },
+    {
+      "end_ls": 61.254024505615234,
+      "end_sol": 4141.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49963005.nc",
+      "start_ls": 47.720314025878906,
+      "start_sol": 4111.08349609375
+    },
+    {
+      "end_ls": 173.68629455566406,
+      "end_sol": 5041.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963008.nc",
+      "start_ls": 157.1240997314453,
+      "start_sol": 5011.08349609375
+    },
+    {
+      "end_ls": 126.31197357177734,
+      "end_sol": 4951.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963011.nc",
+      "start_ls": 111.95072937011719,
+      "start_sol": 4921.08349609375
+    },
+    {
+      "end_ls": 94.03895568847656,
+      "end_sol": 5551.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963014.nc",
+      "start_ls": 80.50349426269531,
+      "start_sol": 5521.08349609375
+    },
+    {
+      "end_ls": 234.15940856933594,
+      "end_sol": 4471.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49963017.nc",
+      "start_ls": 215.00474548339844,
+      "start_sol": 4441.08349609375
+    },
+    {
+      "end_ls": 267.6001892089844,
+      "end_sol": 5191.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963020.nc",
+      "start_ls": 248.13043212890625,
+      "start_sol": 5161.08349609375
+    },
+    {
+      "end_ls": 107.87496185302734,
+      "end_sol": 5581.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963023.nc",
+      "start_ls": 94.07695007324219,
+      "start_sol": 5551.08349609375
+    },
+    {
+      "end_ls": 57.38128662109375,
+      "end_sol": 4801.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963026.nc",
+      "start_ls": 43.78840637207031,
+      "start_sol": 4771.08349609375
+    },
+    {
+      "end_ls": 25.739500045776367,
+      "end_sol": 5401.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963029.nc",
+      "start_ls": 11.224105834960938,
+      "start_sol": 5371.08349609375
+    },
+    {
+      "end_ls": 209.55068969726562,
+      "end_sol": 5101.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963032.nc",
+      "start_ls": 191.2409210205078,
+      "start_sol": 5071.08349609375
+    },
+    {
+      "end_ls": 84.33900451660156,
+      "end_sol": 4861.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963035.nc",
+      "start_ls": 70.89726257324219,
+      "start_sol": 4831.08349609375
+    },
+    {
+      "end_ls": 186.08172607421875,
+      "end_sol": 5731.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963038.nc",
+      "start_ls": 168.88113403320312,
+      "start_sol": 5701.08349609375
+    },
+    {
+      "end_ls": 344.6586608886719,
+      "end_sol": 4651.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49963041.nc",
+      "start_ls": 328.1048278808594,
+      "start_sol": 4621.08349609375
+    },
+    {
+      "end_ls": 262.020263671875,
+      "end_sol": 5851.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963044.nc",
+      "start_ls": 242.52650451660156,
+      "start_sol": 5821.08349609375
+    },
+    {
+      "end_ls": 292.204345703125,
+      "end_sol": 4561.0,
+      "mars_years": [
+        30
+      ],
+      "num_times": 360,
+      "path": "data/49963047.nc",
+      "start_ls": 273.20703125,
+      "start_sol": 4531.08349609375
+    },
+    {
+      "end_ls": 339.9900207519531,
+      "end_sol": 5311.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963050.nc",
+      "start_ls": 323.1811218261719,
+      "start_sol": 5281.08349609375
+    },
+    {
+      "end_ls": 43.75019073486328,
+      "end_sol": 4771.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963053.nc",
+      "start_ls": 29.85222053527832,
+      "start_sol": 4741.08349609375
+    },
+    {
+      "end_ls": 11.182835578918457,
+      "end_sol": 5371.0,
+      "mars_years": [
+        31,
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963056.nc",
+      "start_ls": 356.01934814453125,
+      "start_sol": 5341.08349609375
+    },
+    {
+      "end_ls": 157.0791778564453,
+      "end_sol": 5011.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963059.nc",
+      "start_ls": 141.3653106689453,
+      "start_sol": 4981.08349609375
+    },
+    {
+      "end_ls": 217.60943603515625,
+      "end_sol": 6451.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963062.nc",
+      "start_ls": 198.9772186279297,
+      "start_sol": 6421.08349609375
+    },
+    {
+      "end_ls": 122.12783813476562,
+      "end_sol": 5611.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963065.nc",
+      "start_ls": 107.91390228271484,
+      "start_sol": 5581.08349609375
+    },
+    {
+      "end_ls": 97.97162628173828,
+      "end_sol": 4891.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963068.nc",
+      "start_ls": 84.3765869140625,
+      "start_sol": 4861.08349609375
+    },
+    {
+      "end_ls": 49.5946159362793,
+      "end_sol": 6121.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963071.nc",
+      "start_ls": 35.84560012817383,
+      "start_sol": 6091.08349609375
+    },
+    {
+      "end_ls": 67.00267028808594,
+      "end_sol": 5491.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963074.nc",
+      "start_ls": 53.53374099731445,
+      "start_sol": 5461.08349609375
+    },
+    {
+      "end_ls": 168.83447265625,
+      "end_sol": 5701.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963077.nc",
+      "start_ls": 152.5233612060547,
+      "start_sol": 5671.08349609375
+    },
+    {
+      "end_ls": 35.806827545166016,
+      "end_sol": 6091.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963083.nc",
+      "start_ls": 21.664752960205078,
+      "start_sol": 6061.08349609375
+    },
+    {
+      "end_ls": 300.1328430175781,
+      "end_sol": 5911.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963086.nc",
+      "start_ls": 281.4046936035156,
+      "start_sol": 5881.08349609375
+    },
+    {
+      "end_ls": 305.37994384765625,
+      "end_sol": 5251.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963089.nc",
+      "start_ls": 286.8567810058594,
+      "start_sol": 5221.08349609375
+    },
+    {
+      "end_ls": 80.46601104736328,
+      "end_sol": 5521.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963092.nc",
+      "start_ls": 67.0400619506836,
+      "start_sol": 5491.08349609375
+    },
+    {
+      "end_ls": 223.08631896972656,
+      "end_sol": 5791.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963095.nc",
+      "start_ls": 204.25863647460938,
+      "start_sol": 5761.08349609375
+    },
+    {
+      "end_ls": 281.35162353515625,
+      "end_sol": 5881.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963098.nc",
+      "start_ls": 262.0744323730469,
+      "start_sol": 5851.08349609375
+    },
+    {
+      "end_ls": 318.13433837890625,
+      "end_sol": 5941.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963101.nc",
+      "start_ls": 300.1839904785156,
+      "start_sol": 5911.08349609375
+    },
+    {
+      "end_ls": 76.6020278930664,
+      "end_sol": 6181.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963104.nc",
+      "start_ls": 63.17933654785156,
+      "start_sol": 6151.08349609375
+    },
+    {
+      "end_ls": 53.49602127075195,
+      "end_sol": 5461.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963107.nc",
+      "start_ls": 39.83137893676758,
+      "start_sol": 5431.08349609375
+    },
+    {
+      "end_ls": 70.8598861694336,
+      "end_sol": 4831.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963110.nc",
+      "start_ls": 57.41886520385742,
+      "start_sol": 4801.08349609375
+    },
+    {
+      "end_ls": 323.133056640625,
+      "end_sol": 5281.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963113.nc",
+      "start_ls": 305.4304504394531,
+      "start_sol": 5251.08349609375
+    },
+    {
+      "end_ls": 29.81294059753418,
+      "end_sol": 4741.0,
+      "mars_years": [
+        31
+      ],
+      "num_times": 360,
+      "path": "data/49963116.nc",
+      "start_ls": 15.456748008728027,
+      "start_sol": 4711.08349609375
+    },
+    {
+      "end_ls": 289.4483947753906,
+      "end_sol": 7231.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963119.nc",
+      "start_ls": 270.369873046875,
+      "start_sol": 7201.08349609375
+    },
+    {
+      "end_ls": 351.47802734375,
+      "end_sol": 6001.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963122.nc",
+      "start_ls": 335.295654296875,
+      "start_sol": 5971.08349609375
+    },
+    {
+      "end_ls": 39.79290008544922,
+      "end_sol": 5431.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963125.nc",
+      "start_ls": 25.779165267944336,
+      "start_sol": 5401.08349609375
+    },
+    {
+      "end_ls": 242.4722442626953,
+      "end_sol": 5821.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963128.nc",
+      "start_ls": 223.1396026611328,
+      "start_sol": 5791.08349609375
+    },
+    {
+      "end_ls": 198.92636108398438,
+      "end_sol": 6421.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963131.nc",
+      "start_ls": 181.09371948242188,
+      "start_sol": 6391.08349609375
+    },
+    {
+      "end_ls": 236.8819580078125,
+      "end_sol": 6481.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963134.nc",
+      "start_ls": 217.6622772216797,
+      "start_sol": 6451.08349609375
+    },
+    {
+      "end_ls": 21.624670028686523,
+      "end_sol": 6061.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963137.nc",
+      "start_ls": 6.937969207763672,
+      "start_sol": 6031.08349609375
+    },
+    {
+      "end_ls": 147.9471435546875,
+      "end_sol": 6331.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963140.nc",
+      "start_ls": 132.67507934570312,
+      "start_sol": 6301.08349609375
+    },
+    {
+      "end_ls": 231.31402587890625,
+      "end_sol": 7141.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963143.nc",
+      "start_ls": 212.2340545654297,
+      "start_sol": 7111.08349609375
+    },
+    {
+      "end_ls": 136.94886779785156,
+      "end_sol": 5641.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963146.nc",
+      "start_ls": 122.16815185546875,
+      "start_sol": 5611.08349609375
+    },
+    {
+      "end_ls": 45.6734504699707,
+      "end_sol": 6781.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963149.nc",
+      "start_ls": 31.827438354492188,
+      "start_sol": 6751.08349609375
+    },
+    {
+      "end_ls": 256.4222106933594,
+      "end_sol": 6511.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963152.nc",
+      "start_ls": 236.93603515625,
+      "start_sol": 6481.08349609375
+    },
+    {
+      "end_ls": 181.04527282714844,
+      "end_sol": 6391.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963155.nc",
+      "start_ls": 164.10240173339844,
+      "start_sol": 6361.08349609375
+    },
+    {
+      "end_ls": 6.896164417266846,
+      "end_sol": 6031.0,
+      "mars_years": [
+        32,
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963158.nc",
+      "start_ls": 351.52191162109375,
+      "start_sol": 6001.08349609375
+    },
+    {
+      "end_ls": 212.18170166015625,
+      "end_sol": 7111.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963161.nc",
+      "start_ls": 193.76246643066406,
+      "start_sol": 7081.08349609375
+    },
+    {
+      "end_ls": 63.14189529418945,
+      "end_sol": 6151.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963164.nc",
+      "start_ls": 49.63250732421875,
+      "start_sol": 6121.08349609375
+    },
+    {
+      "end_ls": 132.633544921875,
+      "end_sol": 6301.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963167.nc",
+      "start_ls": 118.03033447265625,
+      "start_sol": 6271.08349609375
+    },
+    {
+      "end_ls": 90.12789154052734,
+      "end_sol": 6211.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963170.nc",
+      "start_ls": 76.63943481445312,
+      "start_sol": 6181.08349609375
+    },
+    {
+      "end_ls": 159.3511505126953,
+      "end_sol": 7021.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963173.nc",
+      "start_ls": 143.5238037109375,
+      "start_sol": 6991.08349609375
+    },
+    {
+      "end_ls": 346.9130859375,
+      "end_sol": 6661.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963176.nc",
+      "start_ls": 330.4823913574219,
+      "start_sol": 6631.08349609375
+    },
+    {
+      "end_ls": 17.464893341064453,
+      "end_sol": 6721.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963179.nc",
+      "start_ls": 2.5950565338134766,
+      "start_sol": 6691.08349609375
+    },
+    {
+      "end_ls": 335.2493591308594,
+      "end_sol": 5971.0,
+      "mars_years": [
+        32
+      ],
+      "num_times": 360,
+      "path": "data/49963182.nc",
+      "start_ls": 318.1831359863281,
+      "start_sol": 5941.08349609375
+    },
+    {
+      "end_ls": 164.0564422607422,
+      "end_sol": 6361.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963185.nc",
+      "start_ls": 147.99073791503906,
+      "start_sol": 6331.08349609375
+    },
+    {
+      "end_ls": 275.8531799316406,
+      "end_sol": 6541.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963188.nc",
+      "start_ls": 256.4765319824219,
+      "start_sol": 6511.08349609375
+    },
+    {
+      "end_ls": 294.82086181640625,
+      "end_sol": 6571.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963191.nc",
+      "start_ls": 275.90667724609375,
+      "start_sol": 6541.08349609375
+    },
+    {
+      "end_ls": 59.273963928222656,
+      "end_sol": 6811.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963194.nc",
+      "start_ls": 45.71155548095703,
+      "start_sol": 6781.08349609375
+    },
+    {
+      "end_ls": 31.788333892822266,
+      "end_sol": 6751.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963197.nc",
+      "start_ls": 17.505428314208984,
+      "start_sol": 6721.08349609375
+    },
+    {
+      "end_ls": 99.90118408203125,
+      "end_sol": 6901.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963200.nc",
+      "start_ls": 86.27246856689453,
+      "start_sol": 6871.08349609375
+    },
+    {
+      "end_ls": 103.87274932861328,
+      "end_sol": 6241.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963203.nc",
+      "start_ls": 90.16569519042969,
+      "start_sol": 6211.08349609375
+    },
+    {
+      "end_ls": 128.37342834472656,
+      "end_sol": 6961.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963206.nc",
+      "start_ls": 113.93576049804688,
+      "start_sol": 6931.08349609375
+    },
+    {
+      "end_ls": 68.88665008544922,
+      "end_sol": 7501.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963209.nc",
+      "start_ls": 55.43291473388672,
+      "start_sol": 7471.08349609375
+    },
+    {
+      "end_ls": 313.0621032714844,
+      "end_sol": 6601.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963212.nc",
+      "start_ls": 294.87261962890625,
+      "start_sol": 6571.08349609375
+    },
+    {
+      "end_ls": 250.81504821777344,
+      "end_sol": 7171.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963215.nc",
+      "start_ls": 231.3678436279297,
+      "start_sol": 7141.08349609375
+    },
+    {
+      "end_ls": 8.996551513671875,
+      "end_sol": 8041.0,
+      "mars_years": [
+        35,
+        36
+      ],
+      "num_times": 360,
+      "path": "data/49963218.nc",
+      "start_ls": 353.7265319824219,
+      "start_sol": 8011.08349609375
+    },
+    {
+      "end_ls": 330.4353942871094,
+      "end_sol": 6631.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963221.nc",
+      "start_ls": 313.1116027832031,
+      "start_sol": 6601.08349609375
+    },
+    {
+      "end_ls": 113.89628601074219,
+      "end_sol": 6931.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963224.nc",
+      "start_ls": 99.93953704833984,
+      "start_sol": 6901.08349609375
+    },
+    {
+      "end_ls": 284.0206604003906,
+      "end_sol": 7891.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963227.nc",
+      "start_ls": 264.8022155761719,
+      "start_sol": 7861.08349609375
+    },
+    {
+      "end_ls": 143.48081970214844,
+      "end_sol": 6991.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963230.nc",
+      "start_ls": 128.41444396972656,
+      "start_sol": 6961.08349609375
+    },
+    {
+      "end_ls": 117.9904556274414,
+      "end_sol": 6271.0,
+      "mars_years": [
+        33
+      ],
+      "num_times": 360,
+      "path": "data/49963233.nc",
+      "start_ls": 103.911376953125,
+      "start_sol": 6241.08349609375
+    },
+    {
+      "end_ls": 245.20787048339844,
+      "end_sol": 7831.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963236.nc",
+      "start_ls": 225.83038330078125,
+      "start_sol": 7801.08349609375
+    },
+    {
+      "end_ls": 342.2789306640625,
+      "end_sol": 7321.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963239.nc",
+      "start_ls": 325.59503173828125,
+      "start_sol": 7291.08349609375
+    },
+    {
+      "end_ls": 72.74343872070312,
+      "end_sol": 6841.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963242.nc",
+      "start_ls": 59.31148910522461,
+      "start_sol": 6811.08349609375
+    },
+    {
+      "end_ls": 270.3160705566406,
+      "end_sol": 7201.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963245.nc",
+      "start_ls": 250.86940002441406,
+      "start_sol": 7171.08349609375
+    },
+    {
+      "end_ls": 2.5526859760284424,
+      "end_sol": 6691.0,
+      "mars_years": [
+        33,
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963248.nc",
+      "start_ls": 346.9576416015625,
+      "start_sol": 6661.08349609375
+    },
+    {
+      "end_ls": 264.7481384277344,
+      "end_sol": 7861.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963251.nc",
+      "start_ls": 245.26217651367188,
+      "start_sol": 7831.08349609375
+    },
+    {
+      "end_ls": 176.08279418945312,
+      "end_sol": 7051.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963254.nc",
+      "start_ls": 159.39639282226562,
+      "start_sol": 7021.08349609375
+    },
+    {
+      "end_ls": 307.9178161621094,
+      "end_sol": 7261.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963257.nc",
+      "start_ls": 289.5007019042969,
+      "start_sol": 7231.08349609375
+    },
+    {
+      "end_ls": 27.73380470275879,
+      "end_sol": 7411.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963260.nc",
+      "start_ls": 13.297685623168945,
+      "start_sol": 7381.08349609375
+    },
+    {
+      "end_ls": 109.84175872802734,
+      "end_sol": 7591.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963263.nc",
+      "start_ls": 95.99474334716797,
+      "start_sol": 7561.08349609375
+    },
+    {
+      "end_ls": 320.5848083496094,
+      "end_sol": 7951.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963266.nc",
+      "start_ls": 302.75457763671875,
+      "start_sol": 7921.08349609375
+    },
+    {
+      "end_ls": 193.71226501464844,
+      "end_sol": 7081.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963269.nc",
+      "start_ls": 176.13052368164062,
+      "start_sol": 7051.08349609375
+    },
+    {
+      "end_ls": 55.395267486572266,
+      "end_sol": 7471.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963272.nc",
+      "start_ls": 41.767250061035156,
+      "start_sol": 7441.08349609375
+    },
+    {
+      "end_ls": 86.23482513427734,
+      "end_sol": 6871.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963275.nc",
+      "start_ls": 72.78081512451172,
+      "start_sol": 6841.08349609375
+    },
+    {
+      "end_ls": 337.5736389160156,
+      "end_sol": 7981.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963278.nc",
+      "start_ls": 320.6332702636719,
+      "start_sol": 7951.08349609375
+    },
+    {
+      "end_ls": 358.1492614746094,
+      "end_sol": 7351.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963281.nc",
+      "start_ls": 342.3241882324219,
+      "start_sol": 7321.08349609375
+    },
+    {
+      "end_ls": 325.54730224609375,
+      "end_sol": 7291.0,
+      "mars_years": [
+        34
+      ],
+      "num_times": 360,
+      "path": "data/49963284.nc",
+      "start_ls": 307.968017578125,
+      "start_sol": 7261.08349609375
+    },
+    {
+      "end_ls": 206.80923461914062,
+      "end_sol": 7771.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963287.nc",
+      "start_ls": 188.6174774169922,
+      "start_sol": 7741.08349609375
+    },
+    {
+      "end_ls": 124.16519927978516,
+      "end_sol": 7621.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963290.nc",
+      "start_ls": 109.88086700439453,
+      "start_sol": 7591.08349609375
+    },
+    {
+      "end_ls": 82.35612487792969,
+      "end_sol": 7531.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963293.nc",
+      "start_ls": 68.92402648925781,
+      "start_sol": 7501.08349609375
+    },
+    {
+      "end_ls": 13.256665229797363,
+      "end_sol": 7381.0,
+      "mars_years": [
+        34,
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963296.nc",
+      "start_ls": 358.1922302246094,
+      "start_sol": 7351.08349609375
+    },
+    {
+      "end_ls": 95.95663452148438,
+      "end_sol": 7561.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963299.nc",
+      "start_ls": 82.3936538696289,
+      "start_sol": 7531.08349609375
+    },
+    {
+      "end_ls": 188.56797790527344,
+      "end_sol": 7741.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963302.nc",
+      "start_ls": 171.24169921875,
+      "start_sol": 7711.08349609375
+    },
+    {
+      "end_ls": 171.1947021484375,
+      "end_sol": 7711.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963305.nc",
+      "start_ls": 154.76158142089844,
+      "start_sol": 7681.08349609375
+    },
+    {
+      "end_ls": 41.72890090942383,
+      "end_sol": 7441.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963308.nc",
+      "start_ls": 27.773277282714844,
+      "start_sol": 7411.08349609375
+    },
+    {
+      "end_ls": 154.71701049804688,
+      "end_sol": 7681.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963311.nc",
+      "start_ls": 139.11978149414062,
+      "start_sol": 7651.08349609375
+    },
+    {
+      "end_ls": 139.07740783691406,
+      "end_sol": 7651.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963314.nc",
+      "start_ls": 124.20573425292969,
+      "start_sol": 7621.08349609375
+    },
+    {
+      "end_ls": 302.7037353515625,
+      "end_sol": 7921.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963317.nc",
+      "start_ls": 284.073486328125,
+      "start_sol": 7891.08349609375
+    },
+    {
+      "end_ls": 225.7769012451172,
+      "end_sol": 7801.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963320.nc",
+      "start_ls": 206.8610076904297,
+      "start_sol": 7771.08349609375
+    },
+    {
+      "end_ls": 353.6829528808594,
+      "end_sol": 8011.0,
+      "mars_years": [
+        35
+      ],
+      "num_times": 360,
+      "path": "data/49963323.nc",
+      "start_ls": 337.6195983886719,
+      "start_sol": 7981.08349609375
+    },
+    {
+      "end_ls": 120.10163116455078,
+      "end_sol": 3601.0,
+      "mars_years": [
+        29
+      ],
+      "num_times": 360,
+      "path": "data/49963404.nc",
+      "start_ls": 105.95511627197266,
+      "start_sol": 3571.083251953125
+    }
+  ],
+  "format": "openmars-target-year-split-v1",
+  "history_size": 2,
+  "lead_steps": 1,
+  "splits": {
+    "train": {
+      "num_samples": 55851,
+      "target_mars_years": [
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    "val": {
+      "num_samples": 7979,
+      "target_mars_years": [
+        35
+      ]
+    }
+  }
+}
