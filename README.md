@@ -70,7 +70,7 @@ That result is preliminary because the hackathon timeline only allowed two main 
 Clone the repository with submodules so the local Aurora dependency is available:
 
 ```bash
-git clone --recurse-submodules <repo-url>
+git clone --recurse-submodules https://github.com/LucasAschenbach/mars-weather
 cd mars-weather
 ```
 
