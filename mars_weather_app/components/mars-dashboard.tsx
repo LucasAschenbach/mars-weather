@@ -45,6 +45,7 @@ export function MarsDashboard() {
   const [forecastSources, setForecastSources] = useState<LoadedForecastSource[]>([])
   const [forecastSourceId, setForecastSourceId] = useState<string | null>(null)
   const [forecastFrame, setForecastFrame] = useState<ForecastFrame | null>(null)
+  const [forecastFrameCache, setForecastFrameCache] = useState<Record<string, ForecastFrame>>({})
 
   const activeForecast = useMemo(
     () =>
@@ -54,6 +55,24 @@ export function MarsDashboard() {
     [forecastSourceId, forecastSources],
   )
   const forecastManifest: ForecastManifest | null = activeForecast?.manifest ?? null
+  const expectedFrameRef =
+    forecastManifest ? frameForLead(forecastManifest, leadHours) : null
+  const expectedFrameKey =
+    activeForecast && expectedFrameRef
+      ? `${activeForecast.id}:${expectedFrameRef.leadHours}`
+      : null
+  const matchingForecastFrame =
+    (expectedFrameKey ? forecastFrameCache[expectedFrameKey] : null) ??
+    (activeForecast &&
+    forecastFrame?.sourceId === activeForecast.id &&
+    forecastFrame.ref.leadHours === expectedFrameRef?.leadHours
+      ? forecastFrame
+      : null)
+  const displayForecastFrame =
+    matchingForecastFrame ??
+    (activeForecast && forecastFrame?.sourceId === activeForecast.id ? forecastFrame : null)
+  const renderedLeadHours =
+    forecastManifest && displayForecastFrame ? displayForecastFrame.ref.leadHours : leadHours
 
   useEffect(() => {
     let cancelled = false
@@ -77,17 +96,21 @@ export function MarsDashboard() {
 
   useEffect(() => {
     if (!activeForecast) {
-      setForecastFrame(null)
       return
     }
 
     let cancelled = false
-    setForecastFrame(null)
     const forecastManifest = activeForecast.manifest
     const ref = frameForLead(forecastManifest, leadHours)
     loadForecastFrame(activeForecast, forecastManifest, ref)
       .then((frame) => {
-        if (!cancelled) setForecastFrame(frame)
+        if (!cancelled) {
+          setForecastFrame(frame)
+          setForecastFrameCache((cache) => ({
+            ...cache,
+            [`${frame.sourceId}:${frame.ref.leadHours}`]: frame,
+          }))
+        }
       })
       .catch(() => {
         if (!cancelled) setForecastFrame(null)
@@ -99,8 +122,8 @@ export function MarsDashboard() {
 
   const m = useMemo(() => {
     const { lon, lat } = selected
-    if (forecastManifest && forecastFrame) {
-      const point = pointAt(forecastManifest, forecastFrame, lon, lat, level)
+    if (forecastManifest && displayForecastFrame) {
+      const point = pointAt(forecastManifest, displayForecastFrame, lon, lat, level)
       return {
         tsurf: point.tsurf,
         ps: point.ps,
@@ -121,15 +144,15 @@ export function MarsDashboard() {
       u: windU(lon, lat, leadHours, level),
       v: windV(lon, lat, leadHours, level),
     }
-  }, [forecastFrame, forecastManifest, selected, leadHours, level])
+  }, [displayForecastFrame, forecastManifest, selected, leadHours, level])
 
   const windSpeed = Math.sqrt(m.u * m.u + m.v * m.v)
   const windDir = ((Math.atan2(-m.u, -m.v) * 180) / Math.PI + 360) % 360
   const levelLabel = `L${level + 1}/${ATMOS_LEVEL_COUNT}`
   const displayDate =
     forecastManifest?.baseTime
-      ? new Date(new Date(forecastManifest.baseTime).getTime() + leadHours * 3600 * 1000)
-      : forecastDate(leadHours)
+      ? new Date(new Date(forecastManifest.baseTime).getTime() + renderedLeadHours * 3600 * 1000)
+      : forecastDate(renderedLeadHours)
 
   return (
     <main className="relative h-dvh w-full overflow-hidden bg-background">
@@ -138,8 +161,8 @@ export function MarsDashboard() {
         leadHours={leadHours}
         selected={selected}
         forecast={
-          forecastManifest && forecastFrame
-            ? { manifest: forecastManifest, frame: forecastFrame }
+          forecastManifest && displayForecastFrame
+            ? { manifest: forecastManifest, frame: displayForecastFrame }
             : null
         }
         onSelect={setSelected}

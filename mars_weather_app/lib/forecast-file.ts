@@ -50,6 +50,7 @@ export interface ForecastFrameRef {
 
 export interface ForecastFrame {
   ref: ForecastFrameRef
+  sourceId: string
   values: Int16Array
 }
 
@@ -278,6 +279,7 @@ export async function loadForecastFrame(
   }
   return {
     ref,
+    sourceId: source.id,
     values: new Int16Array(await response.arrayBuffer()),
   }
 }
